@@ -1,0 +1,51 @@
+<section class="page-card">
+  <header class="page-header">
+    <h2>Student List</h2>
+    <button type="button" class="btn btn-secondary" (click)="loadStudents()">Refresh</button>
+  </header>
+
+  <div class="messages">
+    <p class="message success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="message error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+
+  <div class="toolbar">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      (input)="applyFilter()"
+      placeholder="Search by name or email"
+      aria-label="Search students"
+    />
+  </div>
+
+  <div *ngIf="loading" class="status">Loading students...</div>
+
+  <table *ngIf="!loading" class="students-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Created</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of filteredStudents">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.phoneNumber }}</td>
+        <td>{{ student.createdDate | date: 'medium' }}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="!filteredStudents.length">
+        <td colspan="6" class="status">No students found.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

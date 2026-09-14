@@ -1,0 +1,69 @@
+.page-card {
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.toolbar {
+  margin-bottom: 1rem;
+}
+
+.toolbar input {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid #c2c2c2;
+  border-radius: 6px;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+  border-bottom: 1px solid #ececec;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+.status {
+  color: #666;
+}
+
+.message {
+  margin: 0 0 0.6rem;
+}
+
+.success {
+  color: #1a7f37;
+}
+
+.error {
+  color: #b42318;
+}
+
+.btn {
+  border: 1px solid #bcbcbc;
+  border-radius: 6px;
+  padding: 0.4rem 0.65rem;
+  cursor: pointer;
+  background: #f6f6f6;
+}
+
+.btn-secondary {
+  background: #ebf3ff;
+}
+
+.btn-danger {
+  background: #ffe8e8;
+}

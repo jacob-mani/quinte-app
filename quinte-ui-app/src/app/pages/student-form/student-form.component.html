@@ -1,0 +1,39 @@
+<section class="page-card">
+  <header class="page-header">
+    <h2>Add Student</h2>
+    <button type="button" class="btn btn-secondary" (click)="goToList()">Back to List</button>
+  </header>
+
+  <p class="message success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="message error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <form [formGroup]="studentForm" (ngSubmit)="submit()" novalidate>
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" />
+      <small class="error" *ngIf="studentForm.controls.name.touched && studentForm.controls.name.invalid">
+        Name is required and must be <= 100 characters.
+      </small>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <small class="error" *ngIf="studentForm.controls.email.touched && studentForm.controls.email.invalid">
+        Enter a valid email address.
+      </small>
+    </div>
+
+    <div class="field">
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" type="text" formControlName="phoneNumber" />
+      <small class="error" *ngIf="studentForm.controls.phoneNumber.touched && studentForm.controls.phoneNumber.invalid">
+        Phone number must contain 10 to 15 digits.
+      </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="loading">
+      {{ loading ? 'Saving...' : 'Create Student' }}
+    </button>
+  </form>
+</section>

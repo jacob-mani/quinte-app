@@ -1,0 +1,13 @@
+<div class="app-shell">
+  <header class="topbar">
+    <h1>Quinte Student Management</h1>
+    <nav>
+      <a routerLink="/students" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Students</a>
+      <a routerLink="/students/new" routerLinkActive="active">Add Student</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

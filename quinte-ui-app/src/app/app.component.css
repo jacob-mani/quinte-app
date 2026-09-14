@@ -1,0 +1,51 @@
+:host {
+	display: block;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	color: #222;
+}
+
+body {
+	margin: 0;
+}
+
+.app-shell {
+	min-height: 100vh;
+	background: linear-gradient(180deg, #f6f8fb 0%, #f2f2f2 100%);
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.25rem;
+	background: #1f3b66;
+	color: #fff;
+}
+
+.topbar h1 {
+	margin: 0;
+	font-size: 1.1rem;
+}
+
+.topbar nav {
+	display: flex;
+	gap: 0.8rem;
+}
+
+.topbar a {
+	color: #fff;
+	text-decoration: none;
+	padding: 0.35rem 0.5rem;
+	border-radius: 5px;
+}
+
+.topbar a.active,
+.topbar a:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+	margin: 1rem auto;
+	max-width: 980px;
+	padding: 0 1rem 1.5rem;
+}
